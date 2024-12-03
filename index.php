@@ -29,37 +29,6 @@ $lenguajes = $bandera->fetchAll();
 
 ?>
 
-<head>
-    <style> 
-        *{
-            box-sizing: border-box;
-        }
-
-        .genero__item{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .genero__contenedor{
-            width: 100px;
-            display: flex;
-            margin-top: 10px;
-            justify-content: space-between;
-        }
-
-        .form{
-            display: flex;
-        }
-
-        .contenedor__label{
-            margin-top: 10px;
-        }
-
-        .formulario-contenedor{
-            background-color: #fff;
-        }
-    </style>
-</head>
 <div class="formulario-contenedor">
     <h1> Formulario</h1>
     <form action="envio.php">

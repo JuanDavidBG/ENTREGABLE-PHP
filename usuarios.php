@@ -40,44 +40,21 @@ $usuarios = $bandera->fetchAll();
 
 
 try {
-  $mensaje = "";
+  if (isset($_REQUEST['mensaje'])) {
   $mensaje = $_REQUEST['mensaje'];
   if ($mensaje === 'ELIMINADO EXITOSAMENTE') {
     echo "<script language='javascript'>alert('$mensaje');</script>";
   }
   if ($mensaje === 'ACTUALIZADO EXITOSAMENTE') {
     echo "<script language='javascript'>alert('$mensaje');</script>";
+    }
   }
 } catch (Exception $e) {
   
 }
 
 ?>
-<style>
-    label{
-        text-decoration: underline;
-        color: blue;
-        cursor: pointer;
-    }
-    .input_editar{
-        display: none;
-    }
-    
-    body{
-        height: 100vh;
-        position: relative;
-    }
 
-    .contenedor-editar{
-        display: none;
-    }
-
-
-    .id{
-        display: none;
-    }
-
-</style>
 <table>
     <tr>
         <th>Nombre</th>
