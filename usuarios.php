@@ -72,17 +72,6 @@ try {
         display: none;
     }
 
-    .input_editar:checked ~ .contenedor-editar{
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background: linear-gradient(217deg, rgba(255,0,0,.4), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(0,255,0,.7), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-    }
 
     .id{
         display: none;

@@ -48,12 +48,10 @@ foreach ($lenguajes_usuario as $key => $value) {
 }
 
 
-
-
 ?>
 
 <div class="formulario-contenedor">
-    <h1> FORMULARIO</h1>
+    <h1> Formulario</h1>
     <form action="actualizar.php">
       <input type="hidden" name="id_usuario" value="<?=$id?>">
 
@@ -150,6 +148,6 @@ foreach ($lenguajes_usuario as $key => $value) {
             </div>
         </div>
 
-        <button type="submit">ENVIAR</button>
+        <button type="submit">Enviar</button>
     </form>
 </div>

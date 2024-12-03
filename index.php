@@ -61,7 +61,7 @@ $lenguajes = $bandera->fetchAll();
     </style>
 </head>
 <div class="formulario-contenedor">
-    <h1> FORMULARIO</h1>
+    <h1> Formulario</h1>
     <form action="envio.php">
         <div class="contenedor__label">
             <label for="nombre">Nombre</label>

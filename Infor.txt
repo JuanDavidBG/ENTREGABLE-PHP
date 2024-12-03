@@ -5,11 +5,8 @@ SHOW GRANTS FOR JuanDavid@localhost;
 
 ---------------------------------------------------------------------
 use adso2894667;
-
 drop table if exists usuarios, generos, ciudades, lenguajes, usuarios_lenguajes;
-
-drop table lenguajes;
-
+drop table if exists lenguajes;
 create table usuarios(
 id int auto_increment,
 nombre varchar(255),
@@ -22,45 +19,38 @@ primary key(id),
 FOREIGN KEY (id_genero) REFERENCES generos(id),
 FOREIGN KEY (id_ciudad) REFERENCES ciudades(id)
 );
-
 create table generos(
 id int auto_increment,
 nombre varchar(255),
 primary key(id)
 );
-
 create table ciudades(
 id int auto_increment,
 nombre varchar(255),
 primary key(id)
 );
-
 create table lenguajes(
 id int auto_increment primary key,
 nombre varchar(255)
 );
-
 create table lenguajes_usuarios(
 id_aprendiz int,
 id_lenguaje int,
 FOREIGN KEY (id_aprendiz) REFERENCES usuarios(id),
 FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id)
 );
-
-
 insert into ciudades (nombre) values
-('Piedecuesta'), ('Girón'),('Bucaramanga'),('Lebrija'),('Floridablanca');
-
+('Girón'), ('Piedecuesta'),('Bucaramanga'),('Lebrija'),('Floridablanca');
 insert into generos (nombre) values ('Masculino'),('Femenino'),('Otros');
-
-insert into generos (nombre) values ('No Identificado');
-
-insert into lenguajes (nombre) values ('Java'),('.Net'),('Sql'),('JavaScript'),('Php'),('Python');
-
-insert into usuarios (nombre,apellido,correo,fecha_nacimiento,id_genero,id_ciudad) values
-('Juan','Bautista','Davidbg581@gmail.com','2006-08-12','5','1');
-
+insert into generos (nombre) values ('No binario');
+insert into lenguajes (nombre) values ('JAVA'),('.NET'),('SQL'),('JavaScript'),('PHP'),('PYTHON');
+insert into usuarios(nombre, apellido, correo, fecha_nacimiento, id_genero, id_ciudad) values
+("Juan David", "Bautista Gómez", "davidbg581@gmail.com", '2006-08-12', 1, 2);
 select * from usuarios;
 DELETE FROM usuarios
-WHERE nombre='Juan';
+WHERE id > 4;
+DELETE FROM lenguajes_usuarios
+WHERE id_aprendiz > 4;
 describe usuarios;
+select * from lenguajes_usuarios;
+ALTER TABLE usuarios auto_increment = 4;

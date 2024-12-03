@@ -1,4 +1,0 @@
-create user JuanDavid@localhost identified by "#Aprendiz2024";
-grant all privileges on adso2894667.* to JuanDavid@localhost;
-Flush privileges;
-SHOW GRANTS FOR JuanDavid@localhost;
