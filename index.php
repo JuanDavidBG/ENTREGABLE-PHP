@@ -56,7 +56,7 @@ $lenguajes = $bandera->fetchAll();
         }
 
         .formulario-contenedor{
-            background-color: #ff5733;
+            background-color: #fff;
         }
     </style>
 </head>
