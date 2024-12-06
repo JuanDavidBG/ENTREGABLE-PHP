@@ -40,12 +40,12 @@ FOREIGN KEY (id_aprendiz) REFERENCES usuarios(id),
 FOREIGN KEY (id_lenguaje) REFERENCES lenguajes(id)
 );
 insert into ciudades (nombre) values
-('Girón'), ('Piedecuesta'),('Bucaramanga'),('Lebrija'),('Floridablanca');
+('Floridablanca'), ('Piedecuesta'),('Bucaramanga'),('Lebrija'),('Girón');
 insert into generos (nombre) values ('Masculino'),('Femenino'),('Otros');
 insert into generos (nombre) values ('No binario');
 insert into lenguajes (nombre) values ('JAVA'),('.NET'),('SQL'),('JavaScript'),('PHP'),('PYTHON');
 insert into usuarios(nombre, apellido, correo, fecha_nacimiento, id_genero, id_ciudad) values
-("Juan David", "Bautista Gómez", "davidbg581@gmail.com", '2006-08-12', 1, 2);
+("Juan David", "Bautista Gómez", "davidbg581@gmail.com", '2006-08-12', 1, 1);
 select * from usuarios;
 DELETE FROM usuarios
 WHERE id > 4;

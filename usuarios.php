@@ -41,20 +41,55 @@ $usuarios = $bandera->fetchAll();
 
 try {
   if (isset($_REQUEST['mensaje'])) {
-  $mensaje = $_REQUEST['mensaje'];
-  if ($mensaje === 'ELIMINADO EXITOSAMENTE') {
-    echo "<script language='javascript'>alert('$mensaje');</script>";
-  }
-  if ($mensaje === 'ACTUALIZADO EXITOSAMENTE') {
-    echo "<script language='javascript'>alert('$mensaje');</script>";
-    }
+      $mensaje = $_REQUEST['mensaje'];
+      if ($mensaje === 'ELIMINADO EXITOSAMENTE') {
+        echo "<script language='javascript'>alert('$mensaje');</script>";
+      }
+      if ($mensaje === 'ACTUALIZADO EXITOSAMENTE') {
+        echo "<script language='javascript'>alert('$mensaje');</script>";
+      } 
   }
 } catch (Exception $e) {
   
 }
 
 ?>
+<style>
+    label{
+        text-decoration: underline;
+        color: blue;
+        cursor: pointer;
+    }
+    .input_editar{
+        display: none;
+    }
+    
+    body{
+        height: 100vh;
+        position: relative;
+    }
 
+    .contenedor-editar{
+        display: none;
+    }
+
+    .input_editar:checked ~ .contenedor-editar{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(217deg, rgba(255,0,0,.4), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.7), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    }
+
+    .id{
+        display: none;
+    }
+
+</style>
 <table>
     <tr>
         <th>Nombre</th>

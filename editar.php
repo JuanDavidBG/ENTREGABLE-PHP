@@ -34,7 +34,6 @@ $stm->execute();
 $usuario = $stm->fetchAll();
 $usuario = $usuario[0];
 
-
 $sql = "SELECT * FROM lenguajes_usuarios WHERE id_aprendiz = :id";
 
 $bandera = $conexion->prepare($sql);
@@ -51,7 +50,7 @@ foreach ($lenguajes_usuario as $key => $value) {
 ?>
 
 <div class="formulario-contenedor">
-    <h1> Formulario</h1>
+    <h1> FORMULARIO</h1>
     <form action="actualizar.php">
       <input type="hidden" name="id_usuario" value="<?=$id?>">
 
@@ -148,6 +147,6 @@ foreach ($lenguajes_usuario as $key => $value) {
             </div>
         </div>
 
-        <button type="submit">Enviar</button>
+        <button type="submit">ENVIAR</button>
     </form>
 </div>

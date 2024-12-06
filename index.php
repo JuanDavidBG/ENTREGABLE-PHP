@@ -29,32 +29,64 @@ $lenguajes = $bandera->fetchAll();
 
 ?>
 
+<head>
+    <style> 
+        *{
+            box-sizing: border-box;
+            background-color: #00fff7;
+        }
+
+        .genero__item{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .genero__contenedor{
+            width: 100px;
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .form{
+            display: flex;
+        }
+
+        .contenedor__label{
+            margin-top: 10px;
+        }
+
+        .formulario-contenedor{
+           
+        }
+    </style>
+</head>
 <div class="formulario-contenedor">
     <h1> Formulario</h1>
-    <form action="envio.php">
+    <form action="envio.php" method="post">
         <div class="contenedor__label">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" require>
+            <input type="text" id="nombre" name="nombre" required pattern="^[a-zA-Z\s]{2,}$" autocomplete="off">
         </div>
 
         <div class="contenedor__label">
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" require>
+            <input type="text" id="apellido" name="apellido" required pattern="^[a-zA-Z\s]{2,}$" autocomplete="off">
         </div>
 
         <div class="contenedor__label">
             <label for="correo">Correo</label>
-            <input type="text" id="correo" name="correo" require>
+            <input type="text" id="correo" name="correo" required autocomplete="off">
         </div>
 
         <div class="contenedor__label">
             <label for="fecha">Fecha de nacimiento</label>
-            <input type="date" id="fecha" name="fecha" require>
+            <input type="date" id="fecha" name="fecha" required max="<?=date('Y')?>-<?=date('m')?>-<?=date('d')?>">
         </div>
 
         <div class="contenedor__label">
             <label for="ciudad_id">Ciudad: </label>
-            <select name="ciudad_id" id="ciudad_id" name="ciudad" require>
+            <select name="ciudad_id" id="ciudad_id" name="ciudad" required>
                 <?php 
                     foreach ($ciudades as $key => $value) {
                         echo $value;
@@ -76,7 +108,7 @@ $lenguajes = $bandera->fetchAll();
                         <label for="<?= $value['id'] ?>" class="genero__label">
                             <?= $value['nombre'] ?>
                         </label>
-                        <input type="radio" id="<?= $value['id'] ?>" value="<?= $value['id'] ?>" name="genero" class="genero__input">
+                        <input type="radio" id="<?= $value['id'] ?>" value="<?= $value['id'] ?>" name="genero" class="genero__input" required> 
                     </div>
                     
             <?php
@@ -104,6 +136,6 @@ $lenguajes = $bandera->fetchAll();
             </div>
         </div>
 
-        <button type="submit">ENVIAR</button>
+        <button type="submit">Enviar</button>
     </form>
 </div>
